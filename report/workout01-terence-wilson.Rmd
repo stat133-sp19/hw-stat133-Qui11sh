@@ -36,23 +36,95 @@ knitr::include_graphics("images/gsw-shot-charts.pdf")
 
 #T
 ####INTRODUCTION
-Basketball is a sport beloved by much of the US, as well as some of the rest of the world, although they would rather watch men kick balls than fondle balls. Many of the fans of this sport (a group of fans to which I most definitely do not belong) love to engross themselves in meaningless statistics put up by a bunch of sweaty guys bumping into each other whilst attempting to put a large orange ball through a hoop which is unreasonably high. Personally I have no interest in such meaningless statistics; Even so, I have somehow found myself in posession of an array of statistics about one of the few things I have no interest in, and my boss will likely fire me after learning what is going on here. Hopefully I can get a job at buzzfeed after this. In any case, the shooting percentages of some of the Golden State Warriors have been obtained and analyzed, and apparently some of the data is somewhat interesting.
+Basketball is a sport beloved by much of the US, as well as some of the rest
+of the world, although they would rather watch men kick balls than fondle
+balls. Many of the fans of this sport (a group of fans to which I most
+definitely do not belong) love to engross themselves in meaningless
+statistics put up by a bunch of sweaty guys bumping into each other
+whilst attempting to put a large orange ball through a hoop which is
+unreasonably high. Personally I have no interest in such meaningless
+statistics; Even so, I have somehow found myself in posession of an array of
+statistics about one of the few things I have no interest in, and my boss
+will likely fire me after learning what is going on here. Hopefully I can
+get a job at buzzfeed after this. In any case, the shooting percentages of
+some of the Golden State Warriors have been obtained and analyzed, and
+apparently some of the data is somewhat interesting.
+
 
 
 ####MOTIVATION
-Someone was motivated to bring this data together, likely compiling thousand of different datasets, or maybe a few, but in the end a few dataframes which reveal shooting statistics were squeezed out of the data. Many reasons aside from personal motivation may havecontributed to the analysis of this data. For instance, it would be worthwhile knowing who tends to shoot three point shots, two point shots, or go in for the dunk or layup. This kind of analysis would lend a meager advantage to tthe person who has seen the data, because with such data one could arrange a team such that a plaer, or multiple players even, are locked down for a small portion of the game, meaning that they are unable to perform optimally. This dataset could also simply reveal the biggest scorers on ateam, which is an obvious advantage since that would mean that one who posesses this data can likely analyze who it is most worth for their team to guard, and who can be reasonably left alone. 
+Someone was motivated to bring this data together, likely compiling thousand
+of different datasets, or maybe a few, but in the end a few dataframes which
+reveal shooting statistics were squeezed out of the data. Many reasons aside
+from personal motivation may havecontributed to the analysis of this data.
+For instance, it would be worthwhile knowing who tends to shoot three point
+shots, two point shots, or go in for the dunk or layup. This kind of
+analysis would lend a meager advantage to tthe person who has seen the data,
+because with such data one could arrange a team such that a player, or multiple players even, are locked down for a small portion of the game,
+meaning that they are unable to perform optimally. This dataset could also
+simply reveal the biggest scorers on ateam, which is an obvious advantage
+since that would mean that one who posesses this data can likely analyze
+who it is most worth for their team to guard, and who can be reasonably
+left alone. 
 
 ####BACKGROUND
-I will be completely honest and say that I do not know what background refers to in this context. Am I supposed to reveal backgrounds on the players and why these statistics may line up with how the players are playing in game? I really dont know anything about most of these player except that Kevin Durant has unreasonably long feet. I understand that he is a tall dude and tall dudes have big feet, but his feet are long and skinny, like stilletto knives. What reason have they to be that way? what is the background? And while I have the question in my mind, could background just mean the background of these statistics? Likely a bunch of nerds compiled the statistics after watching four thousand games, and I did the analysis with code in a few hours. Maybe I am supposed to go over the background of statistics in general? I am not a mathematical historian, though, so likely that will not work.
+I will be completely honest and say that I do not know what background
+refers to in this context. Am I supposed to reveal backgrounds on the
+players and why these statistics may line up with how the players are
+playing in game? I really dont know anything about most of these player
+except that Kevin Durant has unreasonably long feet. I understand that he
+is a tall dude and tall dudes have big feet, but his feet are long and
+skinny, like stilletto knives. What reason have they to be that way? what
+is the background? And while I have the question in my mind, could
+background just mean the background of these statistics? Likely a bunch of
+nerds compiled the statistics after watching four thousand games, and I did
+the analysis with code in a few hours. Maybe I am supposed to go over the
+background of statistics in general? I am not a mathematical historian,
+though, so likely that will not work.
 
 ####DATA
-The data is an amalgamation of all of the shooting statistics one could glean from these players for each individual shot. these include what kind of shot(three point, and two point), what action was used to make the shot (dunking, layup, jump shot, etc.), whether the shot actually made it into the basket, and even the x and y coordinates of the shots. These coordinates are displayed in the image above, one for each player analyzed. These individual data points were then combined into a visual representation of the data, as well as a tabular representation so they could be further analyzed.
+The data is an amalgamation of all of the shooting statistics one could
+glean from these players for each individual shot. these include what kind
+of shot(three point, and two point), what action was used to make the shot
+(dunking, layup, jump shot, etc.), whether the shot actually made it into
+the basket, and even the x and y coordinates of the shots. These
+coordinates are displayed in the image above, one for each player analyzed.
+These individual data points were then combined into a visual
+representation of the data, as well as a tabular representation so they
+could be further analyzed.
+
 
 ####ANALYSIS
-Upon analysis of the data one starts to see patterns which arise in the players shooting tendencies. This is another thing which might be useful for some adversary to have when trying to defend against these players. In any case, analysis reveals that some players not only haver certain shooting tendencies, but they also tend to miss or make more shots, as well as how many overall shots they make. Above you can see that some players have a higher make rate, but their over all shot count is so low that having a slightly higher make percentage is not enough to set them above the other players who simply have insane shooting numbers over all. Another statistic which would have been fun to analyze is the shooting action statistic. with this one could actually analyze what kinds of shots are being made and by whom. This would likely reveal the most about the behavior of the athletes, and woud likely provide the most useful information to adversaries. If you know someone is going to try to make a layup for fifty percent of their shots, then you are likely to actively defend against that even if they are a big scorer.
+Upon analysis of the data one starts to see patterns which arise in the
+players shooting tendencies. This is another thing which might be useful
+for some adversary to have when trying to defend against these players. In
+any case, analysis reveals that some players not only haver certain
+shooting tendencies, but they also tend to miss or make more shots, as well
+as how many overall shots they make. Above you can see that some players
+have a higher make rate, but their over all shot count is so low that
+having a slightly higher make percentage is not enough to set them above
+the other players who simply have insane shooting numbers over all. Another
+statistic which would have been fun to analyze is the shooting action
+statistic. with this one could actually analyze what kinds of shots are
+being made and by whom. This would likely reveal the most about the
+behavior of the athletes, and woud likely provide the most useful
+information to adversaries. If you know someone is going to try to make a
+layup for fifty percent of their shots, then you are likely to actively
+defend against that even if they are a big scorer.
+
 
 ####DISCUSSION/CONCLUSION
-These kinds of analysis (the ones mentioned above) could provide significant advantages to adversaries given they are ok with going over all of the analyzed data and using it to form a strategy. It would actually be nice to do an analysis of the kinds of shots being made, because I believe that provides the most meaningful and valuable data. Data over a longer period of time would also be more revealing, as you would be able to track the progress of players and have even more accurate totals on all of the statistics shown above. Unfortunately that is currently unavailable, or is it? There were too many different Kinds of shots, however I did find the minutes left works! here is a cool chart showing the relative positoin and time of shots.
+These kinds of analysis (the ones mentioned above) could provide
+significant advantages to adversaries given they are ok with going over all
+of the analyzed data and using it to form a strategy. It would actually be
+nice to do an analysis of the kinds of shots being made, because I believe
+that provides the most meaningful and valuable data. Data over a longer
+period of time would also be more revealing, as you would be able to track
+the progress of players and have even more accurate totals on all of the
+statistics shown above. Unfortunately that is currently unavailable, or is
+it? There were too many different Kinds of shots, however I did find the
+minutes left works! here is a cool chart showing the relative positoin and
+time of shots.
 
 
 ```{r out.width = '80%', echo = FALSE, fig.align = 'center'}
