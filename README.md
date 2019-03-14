@@ -10,11 +10,6 @@ Private Repository for HW assignments of Stat 133 (Spring 2019)
 
 -----
 
-## Assignments
+## WORKOUT01
 
-- [Demo](demo)
-- [Workout 1](workout1)
-- Workout 2
-- Workout 3
-
-
+This assignment was essentially about learning how to do analysis on large datasets, specifically (for this assignment) on a large dataset of basketball shooting statistics for five men=mbers of the GSW Team.
