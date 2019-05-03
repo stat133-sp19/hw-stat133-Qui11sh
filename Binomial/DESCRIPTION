@@ -1,0 +1,15 @@
+Package: Binomial
+Type: Package
+Title: Binomial Distributions
+Version: 0.1.0
+Authors@R: person("Terence", "Wilson", email = "terence.wilson@berkeley.edu", role = c("aut", "cre"))
+Maintainer: Terence Wilson <terence.wilson@berkeley.edu>
+Description: A package which allows the user to do various calculations and plots of binomial distributions.
+Depends: R(>= 3.1.0)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Collate: Binomial.R
+RoxygenNote: 6.1.1
+Suggests: knitr, rmarkdown, testthat
+VignetteBuilder: knitr

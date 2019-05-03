@@ -1,0 +1,105 @@
+---
+title: "Using the Binomial Package"
+author: "Terence Wilson"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using the Binomial Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+  
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(Binomial)
+```
+
+## Introduction
+
+`"Binomial"` is a package which give you the capability to calbulate various 
+binomial probabilities using a range of different features. 
+
+
+## Binomial functions
+
+To get a simple choose result for a binomial function, just use the bin_choose 
+function
+
+```{r}
+bin_choose(5, 2)
+
+bin_choose(5, 1:2)
+```
+
+If you woud like the probability of getting a particular number of successes, use
+the bin_probability function, with the added probability input.
+
+```{r}
+bin_probability(3, 5, 0.5)
+
+```
+
+You can use the functions bin_variable, bin_distribution, and bin_cumulative to create
+binvar, bindis, and bincum objects, which each hve their own uses.
+
+
+
+## Bin_variable
+
+
+bin_variable takes trials and probability, and creates a binvar object, which has the methods
+print and summary. These methods can be used like so:
+
+```{r}
+bivar <- bin_variable(5, 0.5)
+```
+
+
+## Bin_distribution
+
+This function creates a bindis object, which has the method plot.
+
+bin_distribution can be used like so:
+
+```{r}
+
+bidis <- bin_distribution(5, 0.2)
+plot(bidis)
+
+``` 
+
+This will return a bar chart of the probability of achieving each success
+from 0 to number of trials.
+
+##Bin_cumulative
+
+This function creates a bincum object, which has the method plot.
+
+bin_cumulative can be used like so:
+
+ 
+```{r}
+
+bidis <- bin_distribution(5, 0.2)
+plot(bidis)
+```
+This will return a line-point plot of the probability of achieving each success
+from 0 to number of trials, cumulative on the previous trial probabilities.
+
+#Single vairable functions
+
+If you would like to know just a single feature of a binomial distribution, there
+are five functions which do so.
+bin_mean(trials, prob) -- returns the mean of a binomial distribution
+bin_mode(trials, prob) -- returns the mode of a binomial distribution
+bin_variance(trials, prob) -- returns the variance of a binomial distribution
+bin_skewness(trials, prob) -- returns the skewness of a binomial distribution
+bin_kurtosis(trials, prob) -- returns the curve value of a binomial distribution.
+---
+
+
+
+
+
+
+

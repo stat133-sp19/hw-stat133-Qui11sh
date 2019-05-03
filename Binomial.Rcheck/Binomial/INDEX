@@ -1,0 +1,10 @@
+bin_choose              binomial choose
+bin_cumulative          binomial umulative probability
+bin_distribution        binomial distribution
+bin_kurtosis            binomial kurtosis
+bin_mean                binomial mean
+bin_mode                binomial mode
+bin_probability         binomial probability
+bin_skewness            binomial skewness
+bin_variable            binomial variable
+bin_variance            binomial variance

@@ -89,16 +89,12 @@ setClass("bindis", contains = "data.frame")
 setClass("bincum", contains = "bindis")
 setClass("binvar")
 
-#' @title binomial choose
-#' @description number of ways to choose k in n trials
-#' @param accepts n: number of trials and k: size of combinations
-#' @return returns the number of combinations of size k
+#' @title binomial probability
+#' @description calculate the probability of getting number of successes in trials
+#' @param accepts success, trials, probability
+#' @return returns probability for successes in number of trials
 #' @export 
 #' @example 
-#' bin_choose(n = 5, k = 2)
-#' 10
-#' bin_choose(5, 2:5)
-#' 10, 10, 5, 1
 bin_probability <- function(success, trials, prob){
   if(!check_trials(trials) | !check_prob(prob) | !check_success(success, trials)) {
     stop("One of the inputs had an error")
@@ -107,10 +103,10 @@ bin_probability <- function(success, trials, prob){
   return(arrang*(prob^(success))*((1-prob)^(trials-success)))
 }
 
-#' @title binomial choose
-#' @description number of ways to choose k in n trials
-#' @param accepts n: number of trials and k: size of combinations
-#' @return returns the number of combinations of size k
+#' @title binomial distribution
+#' @description probability of getting any number of successes in n trials
+#' @param accepts trials, probability
+#' @return returns array of probabilities for each number of successes
 #' @export 
 #' @example 
 
@@ -134,10 +130,10 @@ setMethod("plot", "bindis",
             
           })
 
-#' @title binomial choose
-#' @description number of ways to choose k in n trials
-#' @param accepts n: number of trials and k: size of combinations
-#' @return returns the number of combinations of size k
+#' @title binomial umulative probability
+#' @description cumulative probability of getting any number of successes in n trials
+#' @param accepts trials, probability
+#' @return returns array of probabilities for each number of successes increasing cumulatively
 #' @export 
 #' @example 
 
@@ -163,10 +159,10 @@ setMethod("plot", "bincum",
             
           })
 
-#' @title binomial choose
-#' @description number of ways to choose k in n trials
-#' @param accepts n: number of trials and k: size of combinations
-#' @return returns the number of combinations of size k
+#' @title binomial variable
+#' @description creates a variable with trials and probability as features
+#' @param accepts trials, probability
+#' @return returns "binvar" object
 #' @export 
 #' @example 
 
@@ -186,23 +182,99 @@ setMethod("print", "binvar",
             cat("- prob of success:", x$prob, "\n")
           })
 
-setMethod("summary", "binvar",
-          function(binvar) {
-            tri <- x$trials
-            p <- x$prob
-            men <- aux_mean(tri, p)
-            var <- aux_variance(tri, p)
-            mo <- aux_mode(tri, p)
-            skew <- aux_skewness(tri, p)
-            kurt <- aux_kurtosis(tri, p)
-            return(list(trials = tri,
-                        prob = p,
-                        mean = men,
-                        variance = var,
-                        mode = mo,
-                        skewness = skew,
-                        kurtosis = kurt))
-          })
+#' @export
+summary.binvar <- function(x){
+  trial <- x$trials
+  pro <- x$prob
+  prob = pro
+  mean = aux_mean(x$trails, pro)
+  variance = aux_variance(trial, pro)
+  mode = aux_mode(trial, pro)
+  skewness = aux_skewness(trial, pro)
+  kurtosis = aux_kurtosis(trial,pro)
+  sumry <- list(trials = trial,
+               prob = pro,
+               mean = mean,
+               variance = variance, 
+               mode = mode, 
+               skewness = skewness, 
+               kurtosis = kurtosis)
+  class(sumry) <- "summary.binvar"
+  return (sumry)
+  
+}
+
+#' @export
+print.summary.binvar <- function(summary.binvar){
+  cat("  'Binomial variable'","\n\n" ,
+      " Parameters","\n","- number of trials:",
+      summary.binvar$trials,"\n","- prob of success:",
+      summary.binvar$prob, "\n\n","Measures","\n", "- mean:",
+      summary.binvar$mean, "\n - variance:", 
+      summary.binvar$variance, "\n - mode:",
+      summary.binvar$mode, "\n - skewness:", 
+      summary.binvar$skewness, "\n - kurtosis:", summary.binvar$kurtosis)
+}
+
+#' @title binomial mean
+#' @description calculates binomial mean 
+#' @param accepts trials, probabilities
+#' @return binomial mean of trials and Probabilities
+#' @export 
+#' @example 
+bin_mean<- function(trials, prob){
+  check_trials(trials)
+  check_prob(prob)
+  return(aux_mean(trials, prob))
+}
+
+#' @title binomial variance
+#' @description calculates binomial variance
+#' @param accepts trials, probabilities
+#' @return binomial variance of trials and Probabilities
+#' @export 
+#' @example 
+bin_variance <- function(trials, prob){
+  check_trials(trials)
+  check_prob(prob)
+  return(aux_variance(trials, prob))
+}
+
+#' @title binomial mode
+#' @description calculates binomial mode
+#' @param accepts trials, probabilities
+#' @return binomial mode of trials and Probabilities
+#' @export 
+#' @example 
+bin_mode <- function(trials, prob){
+  check_trials(trials)
+  check_prob(prob)
+  return(aux_mode(trials, prob))
+}
+
+#' @title binomial skewness
+#' @description calculates binomial skewness 
+#' @param accepts trials, probabilities
+#' @return binomial skewness of trials and Probabilities
+#' @export 
+#' @example 
+bin_skewness <- function(trials, prob){
+  check_trials(trials)
+  check_prob(prob)
+  return(aux_skewness(trials, prob))
+}
+
+#' @title binomial kurtosis
+#' @description calculates binomial kurtosis
+#' @param accepts trials, probabilities
+#' @return binomial kurtosis of trials and Probabilities
+#' @export 
+#' @example 
+bin_kurtosis <- function(trials, prob){
+  check_trials(trials)
+  check_prob(prob)
+  return(aux_kurtosis(trials, prob))
+}
 
 
 

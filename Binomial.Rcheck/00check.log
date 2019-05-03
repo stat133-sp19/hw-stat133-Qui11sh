@@ -1,0 +1,150 @@
+* using log directory ‘/home/coffee/Documents/CS/133/Binomial/hw-stat133-Qui11sh/Binomial.Rcheck’
+* using R version 3.5.3 (2019-03-11)
+* using platform: x86_64-redhat-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘Binomial/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘Binomial’ version ‘0.1.0’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘Binomial’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking ‘build’ directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... NOTE
+package 'methods' is used but not declared
+* checking S3 generic/method consistency ... WARNING
+print:
+  function(x, ...)
+print.binvar:
+  function(x)
+
+print:
+  function(x, ...)
+print.summary.binvar:
+  function(summary.binvar)
+
+summary:
+  function(object, ...)
+summary.binvar:
+  function(x)
+
+plot:
+  function(x, ...)
+plot.bincum:
+  function(x)
+
+plot:
+  function(x, ...)
+plot.binvar:
+  function(x)
+
+See section ‘Generic functions and methods’ in the ‘Writing R
+Extensions’ manual.
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+plot.bincum: no visible global function definition for ‘plot’
+plot.binvar: no visible global function definition for ‘barplot’
+Undefined global functions or variables:
+  barplot plot
+Consider adding
+  importFrom("graphics", "barplot", "plot")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'bin_choose'
+  ‘n’ ‘k’
+Documented arguments not in \usage in documentation object 'bin_choose':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_cumulative'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_cumulative':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_distribution'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_distribution':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_kurtosis'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_kurtosis':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_mean'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_mean':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_mode'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_mode':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_probability'
+  ‘success’ ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_probability':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_skewness'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_skewness':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_variable'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_variable':
+  ‘accepts’
+
+Undocumented arguments in documentation object 'bin_variance'
+  ‘trials’ ‘prob’
+Documented arguments not in \usage in documentation object 'bin_variance':
+  ‘accepts’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking installed files from ‘inst/doc’ ... OK
+* checking files in ‘vignettes’ ... OK
+* checking examples ... NONE
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... OK
+  Running ‘testthat.R’
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in ‘inst/doc’ ... OK
+* checking re-building of vignette outputs ... OK
+* DONE
+Status: 2 WARNINGs, 2 NOTEs
