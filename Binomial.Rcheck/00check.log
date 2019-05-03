@@ -1,4 +1,4 @@
-* using log directory ‘/home/coffee/Documents/CS/133/Binomial/hw-stat133-Qui11sh/Binomial.Rcheck’
+* using log directory ‘/home/coffee/Documents/CS/133/hw-stat133-Qui11sh/Binomial.Rcheck’
 * using R version 3.5.3 (2019-03-11)
 * using platform: x86_64-redhat-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -16,7 +16,10 @@
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package ‘Binomial’ can be installed ... OK
+* checking whether package ‘Binomial’ can be installed ... WARNING
+Found the following significant warnings:
+  Warning: S3 method ‘plot.binvar’ was declared in NAMESPACE but not found
+See ‘/home/coffee/Documents/CS/133/hw-stat133-Qui11sh/Binomial.Rcheck/00install.out’ for details.
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
@@ -30,12 +33,20 @@
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
 * checking whether the package can be unloaded cleanly ... OK
-* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be loaded with stated dependencies ... NOTE
+Warning: S3 method ‘plot.binvar’ was declared in NAMESPACE but not found
+
+A namespace must be able to be loaded with just the base namespace
+loaded: otherwise if the namespace gets loaded by a saved object, the
+session will be unable to start.
+
+Probably some imports need to be declared in the NAMESPACE file.
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
 * checking dependencies in R code ... NOTE
 package 'methods' is used but not declared
 * checking S3 generic/method consistency ... WARNING
+Warning: declared S3 method 'plot.binvar' not found
 print:
   function(x, ...)
 print.binvar:
@@ -56,18 +67,13 @@ plot:
 plot.bincum:
   function(x)
 
-plot:
-  function(x, ...)
-plot.binvar:
-  function(x)
-
 See section ‘Generic functions and methods’ in the ‘Writing R
 Extensions’ manual.
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
 * checking R code for possible problems ... NOTE
 plot.bincum: no visible global function definition for ‘plot’
-plot.binvar: no visible global function definition for ‘barplot’
+plot.bindis: no visible global function definition for ‘barplot’
 Undefined global functions or variables:
   barplot plot
 Consider adding
@@ -147,4 +153,4 @@ Extensions’ manual.
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking re-building of vignette outputs ... OK
 * DONE
-Status: 2 WARNINGs, 2 NOTEs
+Status: 3 WARNINGs, 3 NOTEs

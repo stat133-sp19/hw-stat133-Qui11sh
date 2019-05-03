@@ -112,7 +112,7 @@ bin_distribution <- function(trials, prob) {
 
 
 #' @export
-plot.binvar <- function(x) {
+plot.bindis <- function(x) {
             lx <- x$success
             ly <- x$probability
             barplot(ly, 1, names.arg = lx,
@@ -138,7 +138,7 @@ bin_cumulative <- function(trials, prob) {
 #' @export
 plot.bincum <- function(x) {
   lx <- x$success
-  ly <- x$probability
+  ly <- x$cumulative
   plot(lx, ly, type = "b",
                     ylab = "Probabilities",
                     xlab = "successes")

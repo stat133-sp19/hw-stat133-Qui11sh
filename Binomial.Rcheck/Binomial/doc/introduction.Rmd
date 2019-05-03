@@ -80,8 +80,8 @@ bin_cumulative can be used like so:
  
 ```{r}
 
-bidis <- bin_distribution(5, 0.2)
-plot(bidis)
+bicum <- bin_cumulative(5, 0.2)
+plot(bicum)
 ```
 This will return a line-point plot of the probability of achieving each success
 from 0 to number of trials, cumulative on the previous trial probabilities.

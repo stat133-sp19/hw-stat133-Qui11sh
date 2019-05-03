@@ -1,0 +1,35 @@
+## Overview
+
+`"Binomial"` is an [R](http://www.r-project.org/) package that contains functions which allow one to calculate various binomial distribution factors.
+
+  - `bin_choose(trials, number)` calculates how many combinations of number length in trials trials. 
+  - `bin_probability(success, trials, prob)` calculates the probability of the nuber of successes given a number of trials and probability of success.
+  - `bin_distribution(trials, prob)` creates a `"bindis"` object of individual probabilities which can be plotted using `plot()`. This outputs a barchart.
+  - `bin_cumulative(trials, prob)`creates a `"bincum"` object of the total probabilities which can be plotted using `plot()`. This outputs a point-lineplot.
+  - `bin_variable(trials, prob)` creates a `"binvar"` object which contains the trials and probability of a binomial distribution. This object has the methods `print()` and `summary()` which give basic features of the binomial distribution.
+
+## Motivation
+
+I need a grade for this project.
+
+## Installation
+
+Install the development version from GitHub via the package
+`"devtools"`:
+
+``` r
+# development version from GitHub:
+#install.packages("devtools") 
+
+# install "binomial" (without vignettes)
+devtools::install_github("Qui11sh/binomial")
+
+# install "binomial" (with vignettes)
+devtools::install_github("Qui11sh/binomial", build_vignettes = TRUE)
+```
+
+## Usage
+
+``` r
+library(binomial)
+```

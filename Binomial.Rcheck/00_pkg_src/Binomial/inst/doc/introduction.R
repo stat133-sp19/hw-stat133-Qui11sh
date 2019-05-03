@@ -22,6 +22,6 @@ plot(bidis)
 
 ## ------------------------------------------------------------------------
 
-bidis <- bin_distribution(5, 0.2)
-plot(bidis)
+bicum <- bin_cumulative(5, 0.2)
+plot(bicum)
 

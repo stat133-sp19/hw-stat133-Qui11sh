@@ -7,4 +7,5 @@
 ** building package indices
 ** installing vignettes
 ** testing if installed package can be loaded
+Warning: S3 method ‘plot.binvar’ was declared in NAMESPACE but not found
 * DONE (Binomial)

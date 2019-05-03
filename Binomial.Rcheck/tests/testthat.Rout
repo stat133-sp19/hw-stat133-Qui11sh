@@ -17,7 +17,9 @@ Type 'q()' to quit R.
 
 > library(testthat)
 > library(Binomial)
+Warning message:
+S3 method 'plot.binvar' was declared in NAMESPACE but not found 
 > 
 > proc.time()
    user  system elapsed 
-  0.197   0.037   0.220 
+  0.238   0.031   0.254 
