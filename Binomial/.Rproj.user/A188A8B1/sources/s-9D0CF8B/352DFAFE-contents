@@ -1,4 +1,4 @@
-#PRivate fucntions
+#Private fucntions
 
 #this funcion check if a number is between 1 & 0
 check_prob <- function(prob) {
@@ -67,12 +67,7 @@ aux_kurtosis <- function(trials, prob){
 #' @description number of ways to choose k in n trials
 #' @param accepts n: number of trials and k: size of combinations
 #' @return returns the number of combinations of size k
-#' @export 
-#' @example 
-#' bin_choose(n = 5, k = 2)
-#' 10
-#' bin_choose(5, 2:5)
-#' 10, 10, 5, 1
+#' @export
 bin_choose <- function(n, k){
   if(any(k>n | k<0) | any(!is.numeric(k))){
     stop("invalid value of k")
@@ -93,8 +88,7 @@ setClass("binvar")
 #' @description calculate the probability of getting number of successes in trials
 #' @param accepts success, trials, probability
 #' @return returns probability for successes in number of trials
-#' @export 
-#' @example 
+#' @export
 bin_probability <- function(success, trials, prob){
   if(!check_trials(trials) | !check_prob(prob) | !check_success(success, trials)) {
     stop("One of the inputs had an error")
@@ -107,36 +101,29 @@ bin_probability <- function(success, trials, prob){
 #' @description probability of getting any number of successes in n trials
 #' @param accepts trials, probability
 #' @return returns array of probabilities for each number of successes
-#' @export 
-#' @example 
-
+#' @export
 bin_distribution <- function(trials, prob) {
   success <- c(0:trials)
-  probability <- bin_probaility(success, trials, prob)
+  probability <- bin_probability(success, trials, prob)
   dis_frame <- data.frame(success, probability)
   class(dis_frame) <- c("bindis", "data.frame")
   return (dis_frame)
 }
 
 
-#' @export 
-setMethod("plot", "bindis", 
-          function(bindis) {
-            lx <- bindis$success
-            ly <- bindis$probability
+#' @export
+plot.binvar <- function(x) {
+            lx <- x$success
+            ly <- x$probability
             barplot(ly, 1, names.arg = lx,
             ylab = "Probabilities",
-            xlab = "successes")
-            
-          })
+            xlab = "successes")}
 
 #' @title binomial umulative probability
 #' @description cumulative probability of getting any number of successes in n trials
 #' @param accepts trials, probability
 #' @return returns array of probabilities for each number of successes increasing cumulatively
-#' @export 
-#' @example 
-
+#' @export
 bin_cumulative <- function(trials, prob) {
   distFrame <- bin_distribution(trials, prob)
   cumu <- c(distFrame$probability[1])
@@ -149,23 +136,20 @@ bin_cumulative <- function(trials, prob) {
 }
 
 #' @export
-setMethod("plot", "bincum", 
-          function(bindis) {
-            lx <- bindis$success
-            ly <- bindis$cumulative
-            plot.default(lx, ly, type = "b",
+plot.bincum <- function(x) {
+  lx <- x$success
+  ly <- x$probability
+  plot(lx, ly, type = "b",
                     ylab = "Probabilities",
                     xlab = "successes")
-            
-          })
+
+          }
 
 #' @title binomial variable
 #' @description creates a variable with trials and probability as features
 #' @param accepts trials, probability
 #' @return returns "binvar" object
-#' @export 
-#' @example 
-
+#' @export
 bin_variable <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
@@ -175,12 +159,12 @@ bin_variable <- function(trials, prob) {
   return (finList)
 }
 
-setMethod("print", "binvar",
-          function(x) {
+#' @export
+print.binvar <- function(x) {
             cat("\"Binomial variable\"\n\nParameters\n")
             cat("- number of trials:", x$trials, "\n")
             cat("- prob of success:", x$prob, "\n")
-          })
+          }
 
 #' @export
 summary.binvar <- function(x){
@@ -195,13 +179,13 @@ summary.binvar <- function(x){
   sumry <- list(trials = trial,
                prob = pro,
                mean = mean,
-               variance = variance, 
-               mode = mode, 
-               skewness = skewness, 
+               variance = variance,
+               mode = mode,
+               skewness = skewness,
                kurtosis = kurtosis)
   class(sumry) <- "summary.binvar"
   return (sumry)
-  
+
 }
 
 #' @export
@@ -210,18 +194,17 @@ print.summary.binvar <- function(summary.binvar){
       " Parameters","\n","- number of trials:",
       summary.binvar$trials,"\n","- prob of success:",
       summary.binvar$prob, "\n\n","Measures","\n", "- mean:",
-      summary.binvar$mean, "\n - variance:", 
+      summary.binvar$mean, "\n - variance:",
       summary.binvar$variance, "\n - mode:",
-      summary.binvar$mode, "\n - skewness:", 
+      summary.binvar$mode, "\n - skewness:",
       summary.binvar$skewness, "\n - kurtosis:", summary.binvar$kurtosis)
 }
 
 #' @title binomial mean
-#' @description calculates binomial mean 
+#' @description calculates binomial mean
 #' @param accepts trials, probabilities
 #' @return binomial mean of trials and Probabilities
-#' @export 
-#' @example 
+#' @export
 bin_mean<- function(trials, prob){
   check_trials(trials)
   check_prob(prob)
@@ -232,8 +215,7 @@ bin_mean<- function(trials, prob){
 #' @description calculates binomial variance
 #' @param accepts trials, probabilities
 #' @return binomial variance of trials and Probabilities
-#' @export 
-#' @example 
+#' @export
 bin_variance <- function(trials, prob){
   check_trials(trials)
   check_prob(prob)
@@ -244,8 +226,7 @@ bin_variance <- function(trials, prob){
 #' @description calculates binomial mode
 #' @param accepts trials, probabilities
 #' @return binomial mode of trials and Probabilities
-#' @export 
-#' @example 
+#' @export
 bin_mode <- function(trials, prob){
   check_trials(trials)
   check_prob(prob)
@@ -253,11 +234,10 @@ bin_mode <- function(trials, prob){
 }
 
 #' @title binomial skewness
-#' @description calculates binomial skewness 
+#' @description calculates binomial skewness
 #' @param accepts trials, probabilities
 #' @return binomial skewness of trials and Probabilities
-#' @export 
-#' @example 
+#' @export
 bin_skewness <- function(trials, prob){
   check_trials(trials)
   check_prob(prob)
@@ -268,8 +248,8 @@ bin_skewness <- function(trials, prob){
 #' @description calculates binomial kurtosis
 #' @param accepts trials, probabilities
 #' @return binomial kurtosis of trials and Probabilities
-#' @export 
-#' @example 
+#' @export
+#' @example
 bin_kurtosis <- function(trials, prob){
   check_trials(trials)
   check_prob(prob)

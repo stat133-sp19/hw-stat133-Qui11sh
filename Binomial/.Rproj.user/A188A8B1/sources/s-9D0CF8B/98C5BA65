@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556915541466.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3628818313",
+    "id" : "98C5BA65",
+    "lastKnownWriteTime" : 1556915596,
+    "last_content_update" : 1556915596989,
+    "path" : "~/Documents/CS/133/Binomial/hw-stat133-Qui11sh/Binomial/tests/testthat/test_aux.R",
+    "project_path" : "tests/testthat/test_aux.R",
+    "properties" : {
+        "cursorPosition" : "28,49",
+        "scrollLine" : "20"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -32,10 +32,11 @@ bin_choose(5, 1:2)
 ```
 
 If you woud like the probability of getting a particular number of successes, use
-the bin_probability function, with the added probaility input.
+the bin_probability function, with the added probability input.
 
 ```{r}
-bin_probaility(3, 5, 0.5)
+bin_probability(3, 5, 0.5)
+
 ```
 
 You can use the functions bin_variable, bin_distribution, and bin_cumulative to create
@@ -46,7 +47,7 @@ binvar, bindis, and bincum objects, which each hve their own uses.
 ## Bin_variable
 
 
-bin_variable takes trials and probaility, and creates a binvar object, which has the methods
+bin_variable takes trials and probability, and creates a binvar object, which has the methods
 print and summary. These methods can be used like so:
 
 ```{r}
@@ -59,12 +60,14 @@ bivar <- bin_variable(5, 0.5)
 This function creates a bindis object, which has the method plot.
 
 bin_distribution can be used like so:
-  
+
 ```{r}
 
 bidis <- bin_distribution(5, 0.2)
 plot(bidis)
-```
+
+``` 
+
 This will return a bar chart of the probability of achieving each success
 from 0 to number of trials.
 
@@ -73,8 +76,9 @@ from 0 to number of trials.
 This function creates a bincum object, which has the method plot.
 
 bin_cumulative can be used like so:
-  
-  ```{r}
+
+ 
+```{r}
 
 bidis <- bin_distribution(5, 0.2)
 plot(bidis)
